@@ -1,0 +1,39 @@
+:root {
+  --grey-100: #f8f8fa;
+  --grey-200: #c2c3c6;
+  --grey-300: #404040;
+  --grey-400: #1a1a1c;
+
+  --green-100: #35f5c3;
+  --green-200: #082e31;
+
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey-400);
+  color: var(--grey-100);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
