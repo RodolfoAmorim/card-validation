@@ -1,15 +1,18 @@
 {
   "name": "credit-card-validation",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "homepage": "https://rodolfoamorim.github.io/card-validation/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
+    "@types/gh-pages": "^3.2.1",
     "@types/react-input-mask": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,6 +24,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }
