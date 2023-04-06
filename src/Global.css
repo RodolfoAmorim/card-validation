@@ -23,8 +23,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--grey-400);
-  color: var(--grey-100);
+  background-color: var(--grey-100);
+  color: var(--grey-400);
 }
 
 body,
@@ -36,4 +36,5 @@ button {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 400;
+  outline: 0;
 }

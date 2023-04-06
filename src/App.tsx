@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
 import styles from "./App.module.css";
@@ -13,7 +12,7 @@ const cardDataSchema = zod.object({
   cardNumber: zod.string(),
   name: zod.string(),
   validity: zod.string(),
-  cvv: zod.string()
+  cvv: zod.string(),
 });
 
 export function App() {
@@ -22,7 +21,7 @@ export function App() {
       cardNumber: "",
       name: "",
       validity: "",
-      cvv: ""
+      cvv: "",
     },
   });
 
@@ -69,19 +68,19 @@ export function App() {
       setCardCvv("***");
     }
   };
-  
+
   const handleCvvOnFocus = () => {
-    setCardCvvFocus(true)
-  }
+    setCardCvvFocus(true);
+  };
 
   const handleCvvOnBlur = () => {
-    setCardCvvFocus(false)
-  }
+    setCardCvvFocus(false);
+  };
 
-  const cvvOnFocus = cardCvvFocus ? styles.flip : '';
+  const cvvOnFocus = cardCvvFocus ? styles.flip : "";
 
   return (
-    <form action="" className={styles.form}>
+    <form action="/" className={styles.form}>
       <div className={`${styles.cardContainer} ${cvvOnFocus}`}>
         <div className={styles.cardInner}>
           <div className={`${styles.creditCard} ${styles.cardFront}`}>
@@ -106,16 +105,17 @@ export function App() {
             <div className={styles.cardUserInfos}>
               <span className={styles.cardCvv}>
                 <small>CVV</small>
-                {cardCvv}
+                <strong>{cardCvv}</strong>
               </span>
             </div>
           </div>
         </div>
       </div>
 
-
       <div className={styles.cardInfos}>
-        <div>
+        <h1>Detalhes do Pagamento</h1>
+
+        <div className={styles.formCardNumber}>
           <label htmlFor="cardNumber">Número do Cartão</label>
           <ReactInputMask
             mask="9999 9999 9999 9999"
@@ -129,7 +129,7 @@ export function App() {
           />
         </div>
 
-        <div>
+        <div className={styles.formCardName}>
           <label htmlFor="nome">Nome do Titular</label>
           <input
             type="text"
@@ -139,7 +139,7 @@ export function App() {
           />
         </div>
 
-        <div>
+        <div className={styles.formCardValidity}>
           <label htmlFor="validity">Validade</label>
           <ReactInputMask
             mask="99/99"
@@ -152,7 +152,7 @@ export function App() {
           />
         </div>
 
-        <div>
+        <div className={styles.formCardCvv}>
           <label htmlFor="cvv">CVV</label>
           <ReactInputMask
             mask="999"
@@ -167,9 +167,11 @@ export function App() {
             onBlur={handleCvvOnBlur}
           />
         </div>
-      </div>
 
-      <button>Adicionar Cartão</button>
+        <h2>Valor do Pagamento: <strong>R$ 1320, 44</strong></h2>
+
+        <button>Pagar</button>
+      </div>
     </form>
   );
 }
